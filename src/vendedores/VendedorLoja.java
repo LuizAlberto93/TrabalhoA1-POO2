@@ -17,6 +17,7 @@ public class VendedorLoja extends Vendedor {
 		this.setComissao(comissao);
 		this.salario = salario;
 		this.horaExtra = horaExtra;
+		
 	}
 
 	public double getSalario() {
@@ -41,6 +42,14 @@ public class VendedorLoja extends Vendedor {
 
 	@Override
 	public String toString() {
-		return "VendedorLoja \n" + "nome: " + this.getNome();
+		return " VendedorLoja"
+				+"\n Nome: " +nome
+				+"\n Salario: " + salario
+				+"\n Comissão: " +comissao
+				+"\n Hora Extra: " + horaExtra
+				+"\n Total: " + calcularPagamento()
+				+"\n -------------------------------";
 	}
+
+	
 }

@@ -14,6 +14,7 @@ public class VendedorExterno extends Vendedor {
 		this.setVendas(vendas);
 		this.setComissao(comissao);
 		this.ajudaCusto = ajudaCusto;
+		
 	}
 
 	public double getAjudaCusto() {
@@ -32,6 +33,14 @@ public class VendedorExterno extends Vendedor {
 
 	@Override
 	public String toString() {
-		return "VendedorExterno \n" + "nome: " + this.getNome();
+		return " VendedorLoja"
+				+"\n Nome: " +nome
+				+"\n Vendas: " + vendas
+				+"\n Comissão: " +comissao
+				+"\n Ajuda de Custo: " + ajudaCusto
+				+"\n Total: " + calcularPagamento()
+				+"\n -------------------------------";
 	}
+
+	
 }
