@@ -1,6 +1,8 @@
 package vendedores;
 
 import template.Vendedor;
+
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -49,6 +51,7 @@ public class Application {
 
 								System.out.println("Digite a hora extra do vendedor: ");
 								vl.setHoraExtra(in.nextDouble());
+															
 								vet[c] = vl;
 								l++;
 								c++;
@@ -81,6 +84,9 @@ public class Application {
 
 					break;
 				case 3:
+					ListarVendedores listar  = new ListarVendedores();
+					listar.toString();
+					
 					break;
 				case 4:
 				}
