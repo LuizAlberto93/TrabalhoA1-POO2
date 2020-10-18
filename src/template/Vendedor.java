@@ -35,7 +35,7 @@ public abstract class Vendedor implements Pagamento, Comparable<Vendedor> {
 
 	@Override
 	public String toString() {
-		return null;
+		return "Não tem vendedor";
 	}
 
 	

@@ -16,7 +16,7 @@ public class Application {
 		try (Scanner in = new Scanner(System.in)) {
 			vet = new Vendedor[10];
 			while (opc != 4) {
-
+			
 				System.out.println();
 				System.out.println("----------------------");
 				System.out.println("Entre com uma opcao");
@@ -26,9 +26,14 @@ public class Application {
 				System.out.println("4-Sair");
 				System.out.print("opção: ");
 				opc = in.nextInt();
-
+				
+				
+				
 				switch (opc) {
 				case 1:
+					if(c >= 4 && e >= 4) {
+						System.out.println("não da pra casdastrar mais otario");
+					}
 					while (sair != 1) {
 						System.out.println("Qual Vendedor você quer Cadastrar? ");
 						System.out.println("1 - Vendedor da Loja \n 2 - Vendedor Externo");
@@ -92,17 +97,76 @@ public class Application {
 					}
 					break;
 				case 2:
+			
+					Vendedor[] vet2 = new Vendedor[1];
+					
+					System.out.println("Qual Vendedor você quer Cadastrar para ser localizado? ");
+					System.out.println("1 - Vendedor da Loja \n 2 - Vendedor Externo");
+					System.out.println("opção: ");
+					opc = in.nextInt();
+					
+					if (opc == 1) {
+					
+							VendedorLoja vl2 = new VendedorLoja();
+							in.nextLine();
+							System.out.println("Digite o nome do Vendedor da Loja: ");
+							vl2.setNome(in.nextLine());
+							
+							System.out.println("Digite a quantidade de vendas do Vendedor: ");
+							vl2.setVendas(in.nextDouble());
 
+							System.out.println("Digite a comissão do vendedor: ");
+							vl2.setComissao(in.nextDouble());
+
+							System.out.println("Digite o salario do vendedor: ");
+							vl2.setSalario(in.nextDouble());
+
+							System.out.println("Digite a hora extra do vendedor: ");
+							vl2.setHoraExtra(in.nextDouble());
+
+							vet2[0] = vl2;
+							
+					}
+					if (opc == 2) {
+						
+							VendedorExterno ve2 = new VendedorExterno();
+							in.nextLine();
+							System.out.println("Digite o nome do Vendedor Externo: ");
+							ve2.setNome(in.nextLine());
+							
+							System.out.println("Digite a quantidade de vendas do Vendedor: ");
+							ve2.setVendas(in.nextDouble());
+							
+							System.out.println("Digite a comissão do vendedor: ");
+							ve2.setComissao(in.nextDouble());
+							
+							System.out.println("Digite a ajuda de custo do vendedor: ");
+							ve2.setAjudaCusto(in.nextDouble());
+							
+							vet2[0] = ve2;
+								
+					}
+					
+					
+					
+					for (int i=0;i<=vet.length;i++){
+						
+						if(	vet2[0].calcularPagamento() == vet[i].calcularPagamento()) {
+							System.out.println("Nome do vendedor encontrado é : "+vet[i].getNome());
+						
+						}
+						
+										
+					}
+					
+					
+					
 					break;
+					
 				case 3:
 					
 					ListarVendedores.listarVendedores(vet);
 					
-					System.out.println("1 - Voltar");
-					System.out.println("2 - Continuar cadastrando");
-					System.out.println("Opção: ");
-					sair = in.nextInt();
-
 					break;
 				case 4:
 				}

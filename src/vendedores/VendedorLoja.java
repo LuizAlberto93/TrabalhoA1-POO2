@@ -42,7 +42,7 @@ public class VendedorLoja extends Vendedor {
 
 	@Override
 	public String toString() {
-		return " VendedorLoja"
+		return " Vendedor Loja"
 				+"\n Nome: " +nome
 				+"\n Salario: " + salario
 				+"\n Comissão: " +comissao

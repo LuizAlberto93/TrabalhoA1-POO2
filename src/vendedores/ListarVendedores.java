@@ -4,12 +4,12 @@ import template.Vendedor;
 
 public class ListarVendedores {
 
-	
-	public static void listarVendedores(Vendedor[] vet)
+	Vendedor[] fdp = new Vendedor[20];
+	public static void listarVendedores(Vendedor[] fdp)
     {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < fdp.length; i++) {
             System.out.println();
-            System.out.println(Application.vet[i]); // Chama o toString() criado nas classes
+            System.out.println(fdp[i]); // Chama o toString() criado nas classes
             System.out.println();
         }
     }
