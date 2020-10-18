@@ -17,7 +17,7 @@ public class VendedorLoja extends Vendedor {
 		this.setComissao(comissao);
 		this.salario = salario;
 		this.horaExtra = horaExtra;
-		
+				
 	}
 
 	public double getSalario() {
@@ -38,6 +38,20 @@ public class VendedorLoja extends Vendedor {
 
 	public double calcularPagamento() {
 		return ((vendas * comissao) + salario + horaExtra);
+	}
+	
+	public boolean equals(Vendedor vet)
+	{
+		for (int i = 0; i <= vet.length; i++) {
+
+			Object[] vet2;
+			if (vet2[0].calcularPagamento() == vet[i].calcularPagamento()) {
+				System.out.println("Nome do vendedor encontrado é : " + vet[i].getNome());
+
+			}
+
+		}
+		
 	}
 
 	@Override
