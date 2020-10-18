@@ -40,24 +40,21 @@ public class VendedorLoja extends Vendedor {
 		return ((vendas * comissao) + salario + horaExtra);
 	}
 	
-	public boolean equals(Vendedor vet)
+	public boolean equals(Object obj) // Método para atender a Questão 5
 	{
-		for (int i = 0; i <= vet.length; i++) {
-
-			Object[] vet2;
-			if (vet2[0].calcularPagamento() == vet[i].calcularPagamento()) {
-				System.out.println("Nome do vendedor encontrado é : " + vet[i].getNome());
-
-			}
-
-		}
-		
+		if (!(obj instanceof VendedorLoja))
+		return false;
+		VendedorLoja e = (VendedorLoja) obj;
+		return this.calcularPagamento() == e.calcularPagamento();
 	}
+
+
 
 	@Override
 	public String toString() {
 		return " Vendedor Loja"
 				+"\n Nome: " +nome
+				+"\n Qtd Vendas: " + vendas
 				+"\n Salario: " + salario
 				+"\n Comissão: " +comissao
 				+"\n Hora Extra: " + horaExtra

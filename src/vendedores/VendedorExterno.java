@@ -30,6 +30,14 @@ public class VendedorExterno extends Vendedor {
 		return ((vendas * comissao) + ajudaCusto);
 
 	}
+	
+	public boolean equals(Object obj) // Método para atender a Questão 5
+	{
+		if (!(obj instanceof VendedorLoja))
+		return false;
+		VendedorLoja e = (VendedorLoja) obj;
+		return this.calcularPagamento() == e.calcularPagamento();
+	}
 
 	@Override
 	public String toString() {

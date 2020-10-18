@@ -78,7 +78,7 @@ public class Application {
 								vet[i] = new VendedorExterno(nome, vendas, comissao, ajudaCusto);
 							}
 						}
-						
+
 						System.out.println("1 - Menu Principal");
 						System.out.println("2 - Continuar cadastrando");
 						System.out.println("Opção: ");
@@ -87,7 +87,7 @@ public class Application {
 					break;
 				case 2:
 
-					Vendedor[] vet2 = new Vendedor[1];
+					Vendedor vet2 = null;
 
 					System.out.println("Qual Vendedor você quer Cadastrar para ser localizado? ");
 					System.out.println("1 - Vendedor da Loja \n 2 - Vendedor Externo");
@@ -112,7 +112,7 @@ public class Application {
 						System.out.println("Digite a hora extra do vendedor: ");
 						double horaExtra = in.nextDouble();
 
-						vet2[0] = new VendedorLoja(nome, vendas, comissao, salario, horaExtra);
+						vet2 = new VendedorLoja(nome, vendas, comissao, salario, horaExtra);
 
 					}
 					if (opc == 2) {
@@ -130,29 +130,19 @@ public class Application {
 						System.out.println("Digite a ajuda de custo do vendedor: ");
 						double ajudaCusto = in.nextDouble();
 
-						vet2[0] = new VendedorExterno(nome, vendas, comissao, ajudaCusto);
+						vet2 = new VendedorExterno(nome, vendas, comissao, ajudaCusto);
 
 					}
 
-//					for (int i = 0; i <= vet.length; i++) {
-//						if (vet2[0] instanceof VendedorExterno) {
-//
-//							VendedorExterno ve2 = (VendedorExterno) vet2[0];
-//
-//							System.out.println(vet[i].getNome().equals(ve2.getNome())
-//									&& vet[i].getVendas() == ve2.getVendas() && vet[i].getComissao() == ve2.getVendas());
-//						} else {
-//						}
-//					}
-					for (int i = 0; i <= vet.length; i++) {
+					for (int i = 0; i < vet.length; i++) {
 
-						if (vet2[0].calcularPagamento() == vet[i].calcularPagamento()) {
+						if (vet2.equals(vet[i])) {
 							System.out.println("Nome do vendedor encontrado é : " + vet[i].getNome());
-
+							return;
 						}
 
 					}
-
+					System.out.println("Não encontrado");
 					break;
 
 				case 3:
