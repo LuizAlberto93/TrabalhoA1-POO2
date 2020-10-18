@@ -40,7 +40,7 @@ public class VendedorLoja extends Vendedor {
 		return ((vendas * comissao) + salario + horaExtra);
 	}
 	
-	public boolean equals(Object obj) // Método para atender a Questão 5
+	public boolean equals(Object obj) 
 	{
 		if (!(obj instanceof VendedorLoja))
 		return false;

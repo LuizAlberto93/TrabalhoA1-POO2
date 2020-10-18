@@ -2,6 +2,7 @@ package vendedores;
 
 import template.Vendedor;
 
+import java.util.Arrays;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -30,7 +31,7 @@ public class Application {
 
 					while (sair != 1) {
 						System.out.println("Por onde quer começar a Cadastrar? ");
-						System.out.println("1 - Vendedor da Loja \n 2 - Vendedor Externo");
+						System.out.println("1 - Vendedor da Loja \n2 - Vendedor Externo");
 						System.out.println("opção: ");
 						opc = in.nextInt();
 
@@ -63,7 +64,7 @@ public class Application {
 
 								in.nextLine();
 
-								System.out.println("Nome do Vendedor Externo" + (i + 1) + ": ");
+								System.out.println("Nome do Vendedor Externo " + (i + 1) + ": ");
 								String nome = in.nextLine();
 
 								System.out.println("Digite a quantidade de vendas do Vendedor: ");
@@ -146,7 +147,7 @@ public class Application {
 					break;
 
 				case 3:
-
+					Arrays.sort(vet);
 					ListarVendedores.listarVendedores(vet);
 
 					break;
@@ -156,7 +157,7 @@ public class Application {
 		}
 
 		catch (InputMismatchException a) {
-			System.out.println("Erro de Entrada e saída!!!");
+			System.out.println("Erro na entrada de Dados!!!");
 			System.exit(0);
 		}
 

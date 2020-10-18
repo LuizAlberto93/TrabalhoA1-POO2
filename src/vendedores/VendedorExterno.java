@@ -31,7 +31,7 @@ public class VendedorExterno extends Vendedor {
 
 	}
 	
-	public boolean equals(Object obj) // Método para atender a Questão 5
+	public boolean equals(Object obj)
 	{
 		if (!(obj instanceof VendedorLoja))
 		return false;
